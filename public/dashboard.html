@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+  <h2>Dashboard</h2>
+  <p id="welcome"></p>
+  <button onclick="logout()">Logout</button>
+
+  <script>
+    const phone = localStorage.getItem("userPhone");
+
+    if (!phone) {
+      window.location.href = "login.html";
+    } else {
+      document.getElementById("welcome").innerText = "Welcome " + phone;
+    }
+
+    function logout() {
+      localStorage.removeItem("userPhone");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
