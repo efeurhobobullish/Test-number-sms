@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Signup</title>
+  <title>SwiftPlug Signup</title>
 </head>
 <body>
   <h2>Signup</h2>
@@ -41,12 +41,12 @@
 
     async function verifyOtp() {
       const phone = document.getElementById("phone").value;
-      const otp = document.getElementById("otp").value;
+      const code = document.getElementById("otp").value;
 
       const res = await fetch(apiUrl + "/verify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone, otp })
+        body: JSON.stringify({ phone, code })
       });
 
       const data = await res.json();
